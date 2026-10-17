@@ -25,4 +25,4 @@ then visit http://localhost:8000.
 
 ## Deploying
 
-Hosted on Netlify, deploying automatically from `main`. The publish directory is the repository root and there is no build command.
+Hosted on GitHub Pages at https://aikode.ca, deploying automatically from `main` (repository root, no build step). The `CNAME` file sets the custom domain.
