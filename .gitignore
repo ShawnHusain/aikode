@@ -33,7 +33,3 @@ venv/
 
 # Claude Code local settings
 .claude/settings.local.json
-
-# Saved copy of the original Airo preview page (reference only)
-Aikode*software studio.html
-Aikode*software studio_files/
