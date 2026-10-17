@@ -25,4 +25,4 @@ then visit http://localhost:8000.
 
 ## Deploying
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages, Azure Static Web Apps). Publish the repository root as-is.
+Hosted on Netlify, deploying automatically from `main`. The publish directory is the repository root and there is no build command.
