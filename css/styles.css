@@ -322,7 +322,7 @@ p {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 112px 24px;
+  padding: 56px 24px 112px;
 }
 
 .hero > .container {
@@ -468,7 +468,7 @@ p {
 .ai-visual .t-c { fill: hsl(var(--muted-foreground)); font-style: italic; }
 
 .ai-visual .code-scroll {
-  animation: code-scroll 6s linear infinite;
+  animation: code-scroll 4s linear infinite;
 }
 
 @keyframes code-scroll {
@@ -500,7 +500,7 @@ p {
 
 @media (min-width: 768px) {
   .hero {
-    padding-block: 144px;
+    padding-block: 72px 144px;
   }
 }
 
