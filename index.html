@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261019d">
+  <link rel="stylesheet" href="css/styles.css?v=20261019c">
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -145,12 +145,12 @@
 
             <!-- Data pulses travelling along the traces -->
             <g class="pulse">
-              <path d="M175 113 V75 H90 V57" pathLength="100" style="--d:0s"/>
-              <path d="M225 113 V75 H310 V57" pathLength="100" style="--d:-1.1s"/>
-              <path d="M123 190 H70" pathLength="100" style="--d:-0.5s"/>
-              <path d="M277 190 H328" pathLength="100" style="--d:-1.6s"/>
-              <path d="M175 267 V305 H90 V323" pathLength="100" style="--d:-2.2s"/>
-              <path d="M225 267 V305 H310 V323" pathLength="100" style="--d:-0.8s"/>
+              <path d="M175 113 V75 H90 V57"/>
+              <path d="M225 113 V75 H310 V57" style="animation-delay:-1.1s"/>
+              <path d="M123 190 H70" style="animation-delay:-0.5s"/>
+              <path d="M277 190 H328" style="animation-delay:-1.6s"/>
+              <path d="M175 267 V305 H90 V323" style="animation-delay:-2.2s"/>
+              <path d="M225 267 V305 H310 V323" style="animation-delay:-0.8s"/>
             </g>
 
             <!-- Chip pins -->
@@ -194,36 +194,12 @@
 
             <!-- Code symbols at the ends of the traces -->
             <g class="token">
-              <g class="tok" style="--d:0s">
-                <rect class="ripple" x="62" y="27" width="56" height="30" rx="8"/>
-                <rect class="box" x="62" y="27" width="56" height="30" rx="8"/>
-                <text x="90" y="47" text-anchor="middle">&lt;/&gt;</text>
-              </g>
-              <g class="tok" style="--d:-1.1s">
-                <rect class="ripple" x="282" y="27" width="56" height="30" rx="8"/>
-                <rect class="box" x="282" y="27" width="56" height="30" rx="8"/>
-                <text x="310" y="47" text-anchor="middle">{ }</text>
-              </g>
-              <g class="tok" style="--d:-0.5s">
-                <rect class="ripple" x="14" y="175" width="56" height="30" rx="8"/>
-                <rect class="box" x="14" y="175" width="56" height="30" rx="8"/>
-                <text x="42" y="195" text-anchor="middle">=&gt;</text>
-              </g>
-              <g class="tok" style="--d:-1.6s">
-                <rect class="ripple" x="328" y="175" width="60" height="30" rx="8"/>
-                <rect class="box" x="328" y="175" width="60" height="30" rx="8"/>
-                <text x="358" y="195" text-anchor="middle">fn()</text>
-              </g>
-              <g class="tok" style="--d:-2.2s">
-                <rect class="ripple" x="62" y="323" width="56" height="30" rx="8"/>
-                <rect class="box" x="62" y="323" width="56" height="30" rx="8"/>
-                <text x="90" y="343" text-anchor="middle">01</text>
-              </g>
-              <g class="tok" style="--d:-0.8s">
-                <rect class="ripple" x="282" y="323" width="56" height="30" rx="8"/>
-                <rect class="box" x="282" y="323" width="56" height="30" rx="8"/>
-                <text x="310" y="343" text-anchor="middle">[ ]</text>
-              </g>
+              <rect x="62" y="27" width="56" height="30" rx="8"/><text x="90" y="47" text-anchor="middle">&lt;/&gt;</text>
+              <rect x="282" y="27" width="56" height="30" rx="8"/><text x="310" y="47" text-anchor="middle">{ }</text>
+              <rect x="14" y="175" width="56" height="30" rx="8"/><text x="42" y="195" text-anchor="middle">=&gt;</text>
+              <rect x="328" y="175" width="60" height="30" rx="8"/><text x="358" y="195" text-anchor="middle">fn()</text>
+              <rect x="62" y="323" width="56" height="30" rx="8"/><text x="90" y="343" text-anchor="middle">01</text>
+              <rect x="282" y="323" width="56" height="30" rx="8"/><text x="310" y="343" text-anchor="middle">[ ]</text>
             </g>
           </svg>
         </div>
@@ -448,6 +424,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261019d" defer></script>
+  <script src="js/main.js?v=20261019c" defer></script>
 </body>
 </html>
