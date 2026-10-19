@@ -430,18 +430,22 @@ p {
   fill: hsl(var(--primary) / 0.8);
 }
 
+/* Pulses run along each trace (path length normalised to 100) and arrive at the
+   box at 65% of the cycle; the box animation below peaks at the same moment. */
 .ai-visual .pulse path {
   fill: none;
   stroke: url(#ai-grad);
   stroke-width: 2.5;
   stroke-linecap: round;
-  stroke-dasharray: 14 200;
+  stroke-dasharray: 8 120;
   animation: ai-pulse 3s linear infinite;
+  animation-delay: var(--d, 0s);
 }
 
 @keyframes ai-pulse {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -214; }
+  0% { stroke-dashoffset: 8; }
+  70% { stroke-dashoffset: -100; }
+  100% { stroke-dashoffset: -100; }
 }
 
 .ai-visual .chip-body {
@@ -468,7 +472,7 @@ p {
 .ai-visual .t-c { fill: hsl(var(--muted-foreground)); font-style: italic; }
 
 .ai-visual .code-scroll {
-  animation: code-scroll 6s linear infinite;
+  animation: code-scroll 4s linear infinite;
 }
 
 @keyframes code-scroll {
@@ -482,20 +486,56 @@ p {
   letter-spacing: 0.08em;
 }
 
-.ai-visual .token rect {
+.ai-visual .token .box {
   fill: hsl(var(--card));
   stroke: hsl(var(--border));
   stroke-width: 1;
+  animation: tok-hit 3s linear infinite;
+  animation-delay: var(--d, 0s);
+}
+
+.ai-visual .token .ripple {
+  fill: none;
+  stroke: hsl(var(--primary));
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tok-ripple 3s ease-out infinite;
+  animation-delay: var(--d, 0s);
 }
 
 .ai-visual .token text {
   fill: hsl(var(--foreground) / 0.9);
   font: 500 13px "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  animation: tok-text 3s linear infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes tok-hit {
+  0%, 62% { stroke: hsl(var(--border)); fill: hsl(var(--card)); filter: none; }
+  67% { stroke: hsl(var(--accent)); fill: hsl(var(--primary) / 0.22); filter: drop-shadow(0 0 6px hsl(var(--accent) / 0.9)); }
+  85%, 100% { stroke: hsl(var(--border)); fill: hsl(var(--card)); filter: none; }
+}
+
+@keyframes tok-ripple {
+  0%, 64% { opacity: 0; transform: scale(1); }
+  66% { opacity: 0.9; transform: scale(1); }
+  90%, 100% { opacity: 0; transform: scale(1.45); }
+}
+
+@keyframes tok-text {
+  0%, 62% { fill: hsl(var(--foreground) / 0.9); }
+  67% { fill: #fff; }
+  85%, 100% { fill: hsl(var(--foreground) / 0.9); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ai-visual .pulse { display: none; }
-  .ai-visual .code-scroll { animation: none; }
+  .ai-visual .code-scroll,
+  .ai-visual .token .box,
+  .ai-visual .token .ripple,
+  .ai-visual .token text { animation: none; }
 }
 
 @media (min-width: 768px) {
