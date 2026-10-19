@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261019">
+  <link rel="stylesheet" href="css/styles.css?v=20261019b">
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -95,13 +95,25 @@
         </div>
 
         <div class="ai-visual reveal">
-          <svg viewBox="0 0 400 380" role="img" aria-labelledby="ai-visual-title">
+          <svg viewBox="0 22 400 336" role="img" aria-labelledby="ai-visual-title">
             <title id="ai-visual-title">An AI chip with circuit traces connecting it to code symbols</title>
             <defs>
               <linearGradient id="ai-grad" x1="0" y1="1" x2="1" y2="0">
                 <stop offset="0" class="stop-primary"/>
                 <stop offset="1" class="stop-accent"/>
               </linearGradient>
+              <clipPath id="code-clip">
+                <rect x="146" y="136" width="108" height="108" rx="13"/>
+              </clipPath>
+              <linearGradient id="code-fade-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                <stop offset="0.22" stop-color="#fff" stop-opacity="1"/>
+                <stop offset="0.78" stop-color="#fff" stop-opacity="1"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+              <mask id="code-fade" maskUnits="userSpaceOnUse" x="146" y="136" width="108" height="108">
+                <rect x="146" y="136" width="108" height="108" fill="url(#code-fade-grad)"/>
+              </mask>
               <radialGradient id="ai-glow">
                 <stop offset="0" class="stop-accent" stop-opacity="0.35"/>
                 <stop offset="1" class="stop-accent" stop-opacity="0"/>
@@ -151,8 +163,34 @@
 
             <!-- Chip -->
             <rect class="chip-body" x="135" y="125" width="130" height="130" rx="22"/>
-            <rect class="chip-core" x="152" y="142" width="96" height="96" rx="14"/>
-            <text class="chip-label" x="200" y="205" text-anchor="middle">AI</text>
+            <rect class="chip-core" x="146" y="136" width="108" height="108" rx="13"/>
+            <g clip-path="url(#code-clip)" mask="url(#code-fade)">
+              <g class="code-scroll">
+                <text class="code-lines" x="154" y="152">
+                  <tspan x="154" dy="0"><tspan class="t-k">const</tspan> ai = <tspan class="t-f">model</tspan>();</tspan>
+                  <tspan x="154" dy="11"><tspan class="t-k">fn</tspan> <tspan class="t-f">build</tspan>(idea) {</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">plan</tspan>(idea);</tspan>
+                  <tspan x="154" dy="11">  code.<tspan class="t-f">write</tspan>();</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">test</tspan>();</tspan>
+                  <tspan x="154" dy="11">}</tspan>
+                  <tspan x="154" dy="11" class="t-c">// listen first</tspan>
+                  <tspan x="154" dy="11"><tspan class="t-k">if</tspan> (useful) {</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">ship</tspan>(tool);</tspan>
+                  <tspan x="154" dy="11">}</tspan>
+                  <tspan x="154" dy="11"><tspan class="t-k">const</tspan> ai = <tspan class="t-f">model</tspan>();</tspan>
+                  <tspan x="154" dy="11"><tspan class="t-k">fn</tspan> <tspan class="t-f">build</tspan>(idea) {</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">plan</tspan>(idea);</tspan>
+                  <tspan x="154" dy="11">  code.<tspan class="t-f">write</tspan>();</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">test</tspan>();</tspan>
+                  <tspan x="154" dy="11">}</tspan>
+                  <tspan x="154" dy="11" class="t-c">// listen first</tspan>
+                  <tspan x="154" dy="11"><tspan class="t-k">if</tspan> (useful) {</tspan>
+                  <tspan x="154" dy="11">  <tspan class="t-f">ship</tspan>(tool);</tspan>
+                  <tspan x="154" dy="11">}</tspan>
+                </text>
+              </g>
+            </g>
+            <text class="chip-tag" x="252" y="249" text-anchor="end">AI</text>
 
             <!-- Code symbols at the ends of the traces -->
             <g class="token">
@@ -386,6 +424,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261019" defer></script>
+  <script src="js/main.js?v=20261019b" defer></script>
 </body>
 </html>

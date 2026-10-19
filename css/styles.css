@@ -456,10 +456,30 @@ p {
   stroke-width: 1;
 }
 
-.ai-visual .chip-label {
+/* Code that scrolls up inside the chip; 10 lines x 11 units, drawn twice for a seamless loop */
+.ai-visual .code-lines {
+  font: 500 8px "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  fill: hsl(var(--foreground) / 0.85);
+  white-space: pre;
+}
+
+.ai-visual .t-k { fill: hsl(var(--accent)); }
+.ai-visual .t-f { fill: hsl(var(--primary)); }
+.ai-visual .t-c { fill: hsl(var(--muted-foreground)); font-style: italic; }
+
+.ai-visual .code-scroll {
+  animation: code-scroll 9s linear infinite;
+}
+
+@keyframes code-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-110px); }
+}
+
+.ai-visual .chip-tag {
   fill: url(#ai-grad);
-  font: 900 46px var(--font-sans);
-  letter-spacing: -0.02em;
+  font: 800 9px var(--font-sans);
+  letter-spacing: 0.08em;
 }
 
 .ai-visual .token rect {
@@ -475,6 +495,7 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   .ai-visual .pulse { display: none; }
+  .ai-visual .code-scroll { animation: none; }
 }
 
 @media (min-width: 768px) {
@@ -486,17 +507,18 @@ p {
 @media (min-width: 1024px) {
   .hero-inner {
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    align-items: center;
+    align-items: start;
   }
 
   .hero-title {
     font-size: clamp(2.6rem, 4.6vw, 4.25rem);
   }
 
-  /* Sit level with the text block's lower edge so the art never rises above the headline */
+  /* Start level with the headline: skip the eyebrow pill (its height plus its 32px gap) */
   .ai-visual {
-    align-self: end;
-    max-width: 360px;
+    align-self: start;
+    max-width: 520px;
+    margin-top: calc(32px + 32px + 0.12em);
   }
 }
 
