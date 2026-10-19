@@ -468,7 +468,7 @@ p {
 .ai-visual .t-c { fill: hsl(var(--muted-foreground)); font-style: italic; }
 
 .ai-visual .code-scroll {
-  animation: code-scroll 9s linear infinite;
+  animation: code-scroll 6s linear infinite;
 }
 
 @keyframes code-scroll {
