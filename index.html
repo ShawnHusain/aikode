@@ -17,7 +17,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
 
@@ -94,15 +94,47 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Our products">
-          <a class="window window-deck" href="https://www.deck-designer.ca/" target="_blank" rel="noopener noreferrer" aria-label="Deck Designer (opens in a new tab)">
-            <span class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>deck-designer.ca</span></span>
-            <img src="assets/deck-designer.jpg" alt="A two-level deck with stairs, furniture and a privacy fence, modelled in 3D in Deck Designer" width="1600" height="900">
-          </a>
-          <a class="window window-ttq" href="https://www.timestable.quest/" target="_blank" rel="noopener noreferrer" aria-label="Times Table Quest (opens in a new tab)">
-            <span class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>timestable.quest</span></span>
-            <img src="assets/times-table-quest.png" alt="The Times Table Quest home page, explaining how practice adapts to each child" width="1280" height="800">
-          </a>
+        <div class="code-visual reveal" role="img" aria-label="A code editor where an AI suggestion completes a program that turns a real problem into a focused tool">
+          <svg class="code-mesh" viewBox="0 0 600 500" aria-hidden="true">
+            <defs>
+              <linearGradient id="mesh-grad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="hsl(218 91% 64%)"/>
+                <stop offset="1" stop-color="hsl(265 89% 65%)"/>
+              </linearGradient>
+            </defs>
+            <g stroke="url(#mesh-grad)" stroke-width="1" opacity="0.45">
+              <line x1="40" y1="70" x2="150" y2="20"/><line x1="150" y1="20" x2="300" y2="40"/>
+              <line x1="300" y1="40" x2="460" y2="15"/><line x1="460" y1="15" x2="570" y2="90"/>
+              <line x1="40" y1="70" x2="20" y2="230"/><line x1="570" y1="90" x2="585" y2="260"/>
+              <line x1="20" y1="230" x2="35" y2="420"/><line x1="585" y1="260" x2="560" y2="440"/>
+              <line x1="35" y1="420" x2="190" y2="485"/><line x1="190" y1="485" x2="380" y2="470"/>
+              <line x1="380" y1="470" x2="560" y2="440"/><line x1="150" y1="20" x2="40" y2="70"/>
+              <line x1="460" y1="15" x2="585" y2="260"/><line x1="20" y1="230" x2="190" y2="485"/>
+            </g>
+            <g fill="url(#mesh-grad)">
+              <circle cx="40" cy="70" r="4"/><circle cx="150" cy="20" r="3"/><circle cx="300" cy="40" r="5"/>
+              <circle cx="460" cy="15" r="3"/><circle cx="570" cy="90" r="4"/><circle cx="20" cy="230" r="3"/>
+              <circle cx="585" cy="260" r="5"/><circle cx="35" cy="420" r="4"/><circle cx="190" cy="485" r="3"/>
+              <circle cx="380" cy="470" r="4"/><circle cx="560" cy="440" r="3"/>
+            </g>
+          </svg>
+
+          <div class="editor">
+            <div class="window-bar"><i></i><i></i><i></i><span>aikode.ts</span></div>
+            <pre class="editor-code"><code><span class="ln">1</span><span class="c">// Aikode: tools that actually get used</span>
+<span class="ln">2</span><span class="k">const</span> problem = <span class="f">listen</span>(you);
+<span class="ln">3</span>
+<span class="ln">4</span><span class="k">const</span> tool = <span class="k">await</span> <span class="f">build</span>(problem, {
+<span class="ln">5</span>  focused: <span class="b">true</span>,
+<span class="ln">6</span>  bloat: <span class="b">false</span>,
+<span class="ln">7</span>});
+<span class="ln">8</span>
+<span class="ln">9</span><span class="ghost"><span class="f">ship</span>(tool, { madeIn: <span class="s">"Canada"</span> });</span><span class="caret"></span></code></pre>
+            <div class="suggestion"><span class="spark">AI</span> Suggestion <kbd>Tab</kbd> to accept</div>
+          </div>
+
+          <div class="chip chip-top"><span class="chip-dot"></span>Deck Designer shipped</div>
+          <div class="chip chip-bottom"><span class="chip-dot"></span>Times Table Quest shipped</div>
         </div>
       </div>
     </section>
