@@ -726,6 +726,27 @@ p {
     hsl(var(--primary) / 0.12);
 }
 
+/* Two links side by side at the bottom of a card */
+.card-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+}
+
+.card-links .visit-link {
+  margin-top: 0;
+}
+
+.card-links .visit-link-secondary {
+  color: hsl(var(--muted-foreground));
+}
+
+.card-links .visit-link-secondary:hover {
+  color: hsl(var(--foreground));
+}
+
 .visit-link {
   margin-top: auto;
   align-self: flex-start;
